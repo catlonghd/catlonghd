@@ -1,5 +1,5 @@
-Here you can say lots of fun things about your site.
+I'm a third-year student of Univercity of Science (HCMUS)
 
-Maybe say a some things about yourself.
+I study cyber security by myself :D
 
-Or maybe what you plan to blog about.
+Contact me if you have any questions.
