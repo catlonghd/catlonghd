@@ -31,7 +31,7 @@ Biến $hash và $request được so sánh bởi '==', là 'Loose comparision' 
 
 Nếu giá trị 0e... được tạo ra bởi hàm md5() và được so sánh với với giá trị 0 được gán cho biến $request thì hàm if sẽ trở thành True. Khi đó ta có thể xem được nội dung của file flag.php thông qua hàm show_source().
 
-Vì cách thức hoạt động của md5 khá phức tạp (các bạn có thể tham khảo tại: https://vi.wikipedia.org/wiki/MD5) nên ta ý nghĩ đầu tiên là brute-force input các giá trị truyền vào hàm md5() đến khi nào có được giá trị 0e... :D
+Vì cách thức hoạt động của md5 khá phức tạp (các bạn có thể tham khảo tại: https://vi.wikipedia.org/wiki/MD5) nên ý nghĩ đầu tiên là brute-force bằng cách chỉnh sửa các giá trị truyền vào hàm md5() đến khi nào có được giá trị 0e... :D
 
 Ta có liên tục thêm './' vào trước 'flag.php' thông qua param 'f' của biến $_REQUEST['f'] đến khi nào ra được giá trị mong muốn.
 
