@@ -3,6 +3,9 @@ Tiếp tục seri các challenge của websec.fr, hôm nay mình sẽ viết wri
 
 Khi truy cập vào challenge, ta sẽ được cung cấp source như sau
 
-![carbon](https://user-images.githubusercontent.com/75677317/195657999-6683eba4-0126-480d-9a4e-2898369071fc.png)
+![carbon (1)](https://user-images.githubusercontent.com/75677317/195658529-b167f14e-77d1-4fd9-ba9f-7e0b9758257b.png)
+
+
+
 
 
