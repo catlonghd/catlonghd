@@ -16,7 +16,7 @@ Với API "http://34.143.130.87:4002/file" yêu cầu cần có parameter, mình
 Với API "http://34.143.130.87:4002/contact", ở đây ta có thể gửi phản hồi về phía server nhưng cũng không khai thác được gì nên mình sẽ bỏ qua.
 
 
-Chỉ còn lại API "http://34.143.130.87:4002/about", ta có thể tra cứu thông tin nhân viên công ty. Đầu tiên mình sẽ thử sử dụng sqlmap xem API này có bị SQLi hay không. Sau khi chạy lệnh thì có vẻ như không thể injec với các db trong list.
+Chỉ còn lại API "http://34.143.130.87:4002/about", ta có thể tra cứu thông tin nhân viên công ty. Đầu tiên mình sẽ thử sử dụng sqlmap xem API này có bị SQLi hay không. Sau khi chạy lệnh thì có vẻ như không thể inject với các db trong list.
 
 ![image](https://user-images.githubusercontent.com/75677317/196017424-08fe9304-f7b5-41f5-8cf2-36dae786626c.png)
 
