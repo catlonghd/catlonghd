@@ -7,8 +7,7 @@ Vừa vào trang web sẽ cho ta một giao diện như thế này
 ![image](https://user-images.githubusercontent.com/75677317/196017117-56545347-b5cd-42f4-b3bc-3d8151b2e0ce.png)
 
 Các tính năng ở API này đều không sử dụng được nên mình sẽ tiến hành brute-force tìm các đường dẫn bằng dirb
-
-![image](https://user-images.githubusercontent.com/75677317/196017158-c6002bcf-f101-47fa-a82d-0de24d533678.png)
+![image](https://user-images.githubusercontent.com/75677317/196017635-aa5884bf-856c-4111-a143-0f91b4f427a9.png)
 
 Với API "http://34.143.130.87:4002/file" yêu cầu cần có parameter, mình đã thử scan parameter bằng arjun nhưng không ra được kết quả nên sẽ bỏ qua.
 Với API "http://34.143.130.87:4002/contact", ở đây ta có thể gửi phản hồi về phía server nhưng cũng không khai thác được gì nên mình sẽ bỏ qua.
