@@ -15,7 +15,7 @@ Sau khi đọc document từ https://www.php.net/manual/en/function.create-funct
 Khi đó để bypass và chạy được code như mong muốn, ta sẽ thoát ra khỏi function bằng cách thêm dấu "}" như khi ta muốn thoát khỏi câu query gốc của chủng lỗi SQLi.
 Ta có payload như sau: c=};echo $flag;//
 
-![image](https://user-images.githubusercontent.com/75677317/202209730-92054439-f679-4b5a-956d-b40a3c6a3475.png)
+<img width="376" alt="image" src="https://user-images.githubusercontent.com/75677317/202210619-2a2c52af-1ab7-452b-8fc8-82f3c9197d94.png">
 
 
 
