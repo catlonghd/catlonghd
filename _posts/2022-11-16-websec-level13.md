@@ -10,7 +10,7 @@ Vào chall ta sẽ được cung cấp source code như sau
 
 Sau khi đọc document từ https://www.php.net/manual/en/function.create-function.php ta biết được dòng số 4 sẽ tương đương như sau
 
-![image](https://user-images.githubusercontent.com/75677317/202211578-d2741c09-03dc-4de3-88d5-e1770e99ddf9.png)
+![image](https://user-images.githubusercontent.com/75677317/202211837-0f35d59d-9c2d-478b-bf53-06d0d4554a8d.png)
 
 Khi đó để bypass và chạy được code như mong muốn, ta sẽ thoát ra khỏi function bằng cách thêm dấu "}" như khi ta muốn thoát khỏi câu query gốc của chủng lỗi SQLi.
 Ta có payload như sau: c=};echo $flag;//
